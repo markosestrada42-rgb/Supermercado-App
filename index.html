@@ -2,26 +2,38 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>Title</title>
+        <title>Supermercado</title>
         <link rel="stylesheet" href="styles.css" />
-        <meta name=" viewport" content=" width=device-whidth,initial-scale=1.0">
+        <meta name=" viewport" content=" width=device-whidth, initial-scale=1.0">
       
         <!--Estructura basica de la lista de supermercado-->
         
     </head>
-    <body>
+<body>
         <header>
             <h1 class="title"> LISTA DE SUPERMERCADO</h1>
         </header>
        
          <!--cuadro de texto y boton de ingreso de Productos-->
-        <div class id="input-group">
-            
-            <input type="text" id="productoInput" Placeholder="Agregar Productos">
-            <button id="agregarBtn">Agregar</button>
+    <main>
+        <section>
+                <div id="input-group">
+                <input type="text" id="productoInput" placeholder="Agregar Productos">
+                <button id="agregarBtn">Agregar</button>
                 </div>
-        <br />
+                <br />
+        </section>
         
-         <script src="script.js"></script>
+        <section 
+                class="container">
+                <h3> Productos Agregados</h3>
+                <ul id = "lista"></ul>
+                <p id= "contador"></p>
+                    
+        </section>
+            
+    </main>
+        
+      <script src="script.js"></script>
     </body>
 </html>
