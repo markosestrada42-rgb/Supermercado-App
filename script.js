@@ -1,26 +1,31 @@
 const input= document.getElementById("productoInput");
-const agregarBton =document.getElementById("agregarBtn");
+const agregarBtn =document.getElementById("agregarBtn");
 const lista =document.getElementById("lista");
 const contador =document.getElementById("contador");
+
+// recuperar productos guardados 
 
 let productos = JSON.parse(localStorage.getItem("productosinput")) || [];
 
 function renderLista(){
     lista.innerHTML ="";
     productos.forEach((producto,index) =>{
-    const li = document.createElement("li");
-    li.textContent =producto.nombre;
+
+        const li = document.createElement("li");
+    li.textContent = producto.nombre;
      
     // boton eliminar
     
     const eliminarBtn = document.createElement("button");
     eliminarBtn.textContent = "Eliminar";
-    eliminarbtn.onclick =() => {
+    eliminarBtn.onclick =() => {
         productos.splice(index,1);
         guardar();
         };
     
+    // insertar boton dentro de li
     li.appendChild(eliminarBtn);
+    //insertar li dentro de boton
     lista.appendChild (li);
        
     });
@@ -28,13 +33,13 @@ function renderLista(){
     }
 
     function guardar(){
-        localStorage.setItem("productosinput", JSON.stringify(producto.length));
+        localStorage.setItem("productosinput", JSON.stringify(productos));
         renderLista();
     }
-    agregarBtn.onclick = ()=> {
+    agregarBtn.onclick = () => {
         const nombre = input.value.trim();
         if (nombre) {
-            productos.push({nombre});
+            productos.push({ nombre });
             input.value = "";
             guardar();
             

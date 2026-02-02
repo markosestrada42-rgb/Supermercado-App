@@ -35,14 +35,22 @@ button:hover {
     background-color: yellowgreen;
 }
 li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 5px 0;
+    padding: 5px;
     List-Style: none; 
 }
    
 li button {
     margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
 }
     
-    
+Lista li Button:hover {
+    background-color: darkred;
+}    
     
     
