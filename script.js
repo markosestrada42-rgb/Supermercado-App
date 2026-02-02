@@ -2,6 +2,10 @@ const input= document.getElementById("productoInput");
 const agregarBtn =document.getElementById("agregarBtn");
 const lista =document.getElementById("lista");
 const contador =document.getElementById("contador");
+const comprarBtn = document.getElementById ("comprarBtn");
+const cancelarBtn = document.getElementById("cancelarBtn");
+const mensaje = document.getElementById("mensaje");
+
 
 // recuperar productos guardados 
 
@@ -44,5 +48,27 @@ function renderLista(){
             guardar();
             
         }
+    };
+    comprarBtn.onclick = () => {
+        productos = [];
+        guardar();
+        mensaje.textContent = "Compra realizada con éxito";
+        mensaje.style.color = "green";
+       
+        setTimeout(() => { 
+            mensaje.textContent = "";
+        }, 1000);
+    };
+        
+    cancelarBtn.onclick = () => {
+        productos = [];
+        guardar();
+        mensaje.textContent = "compra Cancelada";
+        mensaje.style.color = "red";
+        
+        setTimeout(() => { 
+            mensaje.textContent = "";
+        }, 1000);
+        
     };
     renderLista();
